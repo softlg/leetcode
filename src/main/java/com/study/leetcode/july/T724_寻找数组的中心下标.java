@@ -2,7 +2,7 @@ package com.study.leetcode.july;
 
 import java.util.Arrays;
 
-public class T724 {
+public class T724_寻找数组的中心下标 {
 
     /**
      * 寻找数组的中心下标（前缀和）
