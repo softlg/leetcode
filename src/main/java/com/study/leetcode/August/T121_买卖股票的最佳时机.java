@@ -31,6 +31,7 @@ public class T121_买卖股票的最佳时机 {
 
     --------------------------------------------------------------------------------
      */
+
     public int maxProfit(int[] prices) {
         // 初始化最低成本cost，最高利润
         int cost = Integer.MAX_VALUE, profit = 0;
