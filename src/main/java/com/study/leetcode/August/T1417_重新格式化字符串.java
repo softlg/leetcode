@@ -4,7 +4,6 @@ package com.study.leetcode.August;
  * @date 2022/8/11 13:56
  */
 public class T1417_重新格式化字符串 {
-
     /*
     难度：简单
     --------------------------------------------------------------------------------
@@ -21,35 +20,35 @@ public class T1417_重新格式化字符串 {
     --------------------------------------------------------------------------------
      */
 
-    public String reformat(String s) {
-        StringBuilder a = new StringBuilder(), b = new StringBuilder();
-        for (char c : s.toCharArray()) {
-            if (c >= 'a') {
-                a.append(c);
-            } else {
-                b.append(c);
-            }
-        }
-        int n = a.length(), m = b.length(), tot = n + m;
-        if (Math.abs(n - m) > 1) {
-            return "";
-        }
-        StringBuilder sb = new StringBuilder();
-        while (sb.length() != tot) {
-            if (n > m) {
-                sb.append(a.charAt(--n));
-            } else if (n < m) {
-                sb.append(b.charAt(--m));
-            } else {
-                if (!sb.isEmpty() && sb.charAt(sb.length() - 1) >= 'a') {
-                    sb.append(b.charAt(--m));
-                } else {
-                    sb.append(a.charAt(--n));
-                }
-            }
-        }
-        return sb.toString();
-    }
+//    public String reformat(String s) {
+//        StringBuilder a = new StringBuilder(), b = new StringBuilder();
+//        for (char c : s.toCharArray()) {
+//            if (c >= 'a') {
+//                a.append(c);
+//            } else {
+//                b.append(c);
+//            }
+//        }
+//        int n = a.length(), m = b.length(), tot = n + m;
+//        if (Math.abs(n - m) > 1) {
+//            return "";
+//        }
+//        StringBuilder sb = new StringBuilder();
+//        while (sb.length() != tot) {
+//            if (n > m) {
+//                sb.append(a.charAt(--n));
+//            } else if (n < m) {
+//                sb.append(b.charAt(--m));
+//            } else {
+//                if (!sb.isEmpty() && sb.charAt(sb.length() - 1) >= 'a') {
+//                    sb.append(b.charAt(--m));
+//                } else {
+//                    sb.append(a.charAt(--n));
+//                }
+//            }
+//        }
+//        return sb.toString();
+//    }
 
 
 }
