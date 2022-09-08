@@ -37,7 +37,7 @@ public class T977_有序数组的平方 {
     public int[] sortedSquares(int[] nums) {
         // 左指针，指向原数组最左边
         int left = 0;
-        // 有指针，指向原数组最右边
+        // 右指针，指向原数组最右边
         int right = nums.length - 1;
         // 创建一个新数组，存储平方值
         int[] result = new int[nums.length];
