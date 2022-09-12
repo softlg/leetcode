@@ -37,6 +37,11 @@
             <artifactId>spring-tx</artifactId>
             <version>5.3.13</version>
         </dependency>
+        <dependency>
+            <artifactId>spring-data-commons</artifactId>
+            <groupId>org.springframework.data</groupId>
+            <version>2.6.2</version>
+        </dependency>
     </dependencies>
 
     <build>
