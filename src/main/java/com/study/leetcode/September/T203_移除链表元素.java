@@ -1,8 +1,10 @@
 package com.study.leetcode.September;
 
-import com.study.leetcode.util.ListNode;
+//import com.study.leetcode.util.ListNode;
+//
+//import java.util.List;
 
-import java.util.List;
+import com.study.leetcode.util.ListNode;
 
 /**
  * @author：c
@@ -20,17 +22,17 @@ public class T203_移除链表元素 {
     --------------------------------------------------------------------------------
      */
 
-//    public ListNode removeElements(ListNode head,int val) {
-//        while(head!=null && head.val==val){
-//            head = head.next;
-//        }
-//        ListNode curr = head;
-//        while(curr!=null){
-//            while(curr.next!=null && curr.next.val == val){
-//                curr.next = curr.next.next;
-//            }
-//            curr = curr.next;
-//        }
-//        return head;
-//    }
+    public ListNode removeElements(ListNode head, int val) {
+        while(head!=null && head.val==val){
+            head = head.next;
+        }
+        ListNode curr = head;
+        while(curr!=null){
+            while(curr.next!=null && curr.next.val == val){
+                curr.next = curr.next.next;
+            }
+            curr = curr.next;
+        }
+        return head;
+    }
 }
