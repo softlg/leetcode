@@ -25,7 +25,6 @@ public class T242_有效的字母异位词 {
         for(int i = 0; i < s.length(); i++){
             hash[s.charAt(i) - 'a']++;
         }
-
         for(int j = 0; j < t.length(); j++){
             hash[t.charAt(j) - 'a']--;
         }
