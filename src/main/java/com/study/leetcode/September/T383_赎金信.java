@@ -89,9 +89,31 @@ public class T383_赎金信 {
         return true;
     }
 
+    public static boolean canConstruct3(String ransomNote, String magazine) {
+        // 定义一个哈希映射数组
+        int[] record = new int[26];
+
+        // 遍历
+        for (int i = 0; i < magazine.length(); i++) {
+            record[magazine.charAt(i) - 'a'] += 1;
+        }
+
+        for (int i = 0; i < ransomNote.length(); i++) {
+            record[ransomNote.charAt(i) - 'a'] -= 1;
+        }
+
+        // 如果数组中存在负数，说明ransomNote字符串总存在magazine中没有的字符
+        for (int i = 0; i < record.length; i++) {
+            if(record[i] < 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         String a = "aa",b = "aab";
-        System.out.println(canConstruct(a, b));
+        System.out.println(canConstruct3(a, b));
     }
 
 }
