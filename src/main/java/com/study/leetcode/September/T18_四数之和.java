@@ -45,8 +45,9 @@ public class T18_四数之和 {
         List<List<Integer>> result = new ArrayList<>();
         // 排序
         Arrays.sort(nums);
-        //
+        //i
         for (int i = 0; i < nums.length; i++) {
+            System.out.println(i);
             // nums[i] > target 直接返回, 剪枝操作
             if (nums[i] > 0 && nums[i] > target) {
                 return result;
