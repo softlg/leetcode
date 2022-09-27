@@ -48,7 +48,6 @@ public class T剑指Offer58II_左旋转字符串 {
         System.out.println(reverseLeftWords(s, 2));
     }
 }
-
 /**
  * StringBuilder
  */
