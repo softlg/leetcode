@@ -38,15 +38,15 @@ public class T28_找出字符串中第一个匹配项的下标 {
 
         int j = 0;
         for (int i = 0; i < haystack.length(); i++) {
-
+            // 匹配不成功 j = next[j - 1]
             while (j > 0 && needle.charAt(j) != haystack.charAt(i)){
                 j = next[j - 1];
             }
-
+            // 匹配成功的话，先让 j++，结束本次循环后 i++
             if (needle.charAt(j) == haystack.charAt(i)){
                 j++;
             }
-
+            // 整一段匹配成功，直接返回下标
             if (j == needle.length()) {
                 return i - needle.length() + 1;
             }
