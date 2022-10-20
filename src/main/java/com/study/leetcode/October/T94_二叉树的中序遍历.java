@@ -10,12 +10,12 @@ import java.util.List;
  * @date： 2022/10/20
  * Description：
  */
-public class T145_二叉树的后序遍历 {
+public class T94_二叉树的中序遍历 {
     /*
     难度：easy
     --------------------------------------------------------------------------------
     题目：
-        给你二叉树的根节点 root ，返回它节点值的 后序 遍历。
+        给你二叉树的根节点 root ，返回它节点值的 中序 遍历。
     --------------------------------------------------------------------------------
     解题思路：
         1、确定递归函数的参数和返回值： 确定哪些参数是递归的过程中需要处理的，那么就在递归函数里加上这个参数，
@@ -41,7 +41,7 @@ public class T145_二叉树的后序遍历 {
             return;
         }
         preorder(node.left,result);
-        preorder(node.right,result);
         result.add(node.val);
+        preorder(node.right,result);
     }
 }
