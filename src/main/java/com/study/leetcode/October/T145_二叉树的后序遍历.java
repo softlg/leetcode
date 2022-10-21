@@ -2,8 +2,7 @@ package com.study.leetcode.October;
 
 import com.study.leetcode.util.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author： liaoguang
@@ -27,7 +26,11 @@ public class T145_二叉树的后序遍历 {
         3、确定单层递归的逻辑： 确定每一层递归需要处理的信息。在这里也就会重复调用自己来实现递归的过程。
     --------------------------------------------------------------------------------
     */
-
+    /**
+     * 解法一：递归
+     * @param root
+     * @return
+     */
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
 
@@ -43,5 +46,31 @@ public class T145_二叉树的后序遍历 {
         preorder(node.left,result);
         preorder(node.right,result);
         result.add(node.val);
+    }
+
+    /**
+     * 解法二：迭代
+     * @param root
+     * @return
+     */
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if(root == null){
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            TreeNode node = stack.pop();
+            if(node == null){
+                continue;
+            }
+            result.add(node.val);
+            //
+            stack.push(node.left);
+            stack.push(node.right);
+        }
+        Collections.reverse(result);
+        return result;
     }
 }
