@@ -4,6 +4,7 @@ import com.study.leetcode.util.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @author： liaoguang
@@ -28,6 +29,11 @@ public class T94_二叉树的中序遍历 {
     --------------------------------------------------------------------------------
     */
 
+    /**
+     * 解法一：递归
+     * @param root
+     * @return
+     */
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
 
@@ -43,5 +49,31 @@ public class T94_二叉树的中序遍历 {
         preorder(node.left,result);
         result.add(node.val);
         preorder(node.right,result);
+    }
+
+    /**
+     * 解法二：迭代
+     * @param root
+     * @return
+     */
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if(root == null){
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while(cur != null || !stack.isEmpty()){
+            if(cur != null){
+                stack.push(cur);
+                cur = cur.left;
+            }else{
+                cur = stack.pop();
+                result.add(cur.val);
+                cur = cur.right;
+            }
+        }
+        return result;
+
     }
 }
