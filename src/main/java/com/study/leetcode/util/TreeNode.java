@@ -10,7 +10,7 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    TreeNode() {}
+    TreeNode(String s) {}
 
     public TreeNode(int val) {
         this.val = val;
