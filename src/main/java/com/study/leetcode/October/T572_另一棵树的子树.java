@@ -24,10 +24,11 @@ public class T572_另一棵树的子树 {
      */
 
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        if(root == null && subRoot == null){
-            return true;
-        }
-        return isSameTree(root.left,subRoot) || isSameTree(root.right,subRoot);
+        // subRoot 为 null 一定都是 true
+        if (subRoot == null) return true;
+        // 这里 subRoot 一定不为 null, 只要 root 为 null，肯定是 false
+        if (root == null) return false;
+        return isSubtree(root.left,subRoot) || isSubtree(root.right,subRoot) || isSameTree(root,subRoot);
     }
 
     public boolean isSameTree(TreeNode p, TreeNode q) {
