@@ -1,4 +1,4 @@
-package coc.niuke.huawei.greed;
+package com.study.leetcode.shuati;
 
 /**
  * @author c
