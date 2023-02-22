@@ -1,5 +1,8 @@
 package ccc.study.suixianglu.dynamicProgramming;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author c
  * @date 2023/2/21 23:58
@@ -34,5 +37,40 @@ public class T509_斐波那契数 {
         return fib(n - 1) + fib(n -2);
     }
 
+    /**
+     * 同城笔试
+     * @param n
+     * @return
+     */
+    public static long fibLong(long n) {
+        if(n < 2L){
+            return n;
+        }
 
+        return fibLong(Long.valueOf(n - 1)) + fibLong(Long.valueOf(n - 2));
+    }
+
+    public static long[] test(long sum){
+        List<Long> res = new ArrayList<>(2);
+        for (long i = 0; i < Long.MAX_VALUE; i++) {
+            long after = fibLong(i) * fibLong(i + 1);
+            if (after == sum){
+                res.add(fibLong(i));
+                res.add(fibLong(i + 1));
+                res.add(1L);
+                break;
+            }else if (after > sum){
+                res.add(fibLong(i - 1));
+                res.add(fibLong(i));
+                res.add(0L);
+                break;
+            }
+        }
+        return res.stream().mapToLong(Long::intValue).toArray();
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(test(800L));
+    }
 }
