@@ -23,9 +23,9 @@ public class T40_组合总和II {
         int[] dp = new int[target + 1];
         // 初始化
         dp[0] = 1;
-        // 遍历物品
+        // 遍历背包
         for(int i = 0; i <= target; i++){
-            // 遍历背包
+            // 遍历物品
             for(int j = 0; j < nums.length; j++){
                 if (i >= nums[j]) {
                     dp[i] += dp[i - nums[j]];
