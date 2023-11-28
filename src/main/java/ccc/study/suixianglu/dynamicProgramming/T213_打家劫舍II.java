@@ -39,4 +39,10 @@ public class T213_打家劫舍II {
         return z;
     }
 
+    public static void main(String[] args) {
+        String categoryList = null;
+        categoryList.contains("AAA");
+        System.out.println(1);
+    }
+
 }
