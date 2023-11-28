@@ -24,7 +24,7 @@ public class ListNode {
         this.val=val;
     }
 
-    ListNode(int val, ListNode next) {
+    public ListNode(int val, ListNode next) {
         // 这个就是包含两个参数的构造方法
         this.val = val;
         this.next = next;
