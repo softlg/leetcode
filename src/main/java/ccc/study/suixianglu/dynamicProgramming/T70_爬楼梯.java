@@ -31,4 +31,21 @@ public class T70_爬楼梯 {
         }
         return dp[n];
     }
+
+
+    public int climbStairs2(int n) {
+        int num = 2;
+        //
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        // 先遍历背包，再遍历物品
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= num; j++){
+                if(i >= j){
+                    dp[i] += dp[i - j];
+                }
+            }
+        }
+        return dp[n];
+    }
 }
